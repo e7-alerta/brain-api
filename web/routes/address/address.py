@@ -8,7 +8,7 @@ address_routes = APIRouter()
 
 # ai/addresses/parse
 @address_routes.post("/ai/addresses/parse")
-async def parse_address(bodyForm: dict) -> AddressParseResult:
+async def parse_address(bodyForm: dict) -> dict:
     """
     Dado una direccion devuelta por una api de geolocalizacion, evalua este texto y extrae la calle y el numero de esta.
     Si no se puede extraer la calle y el numero, devuelve success=false
@@ -23,6 +23,6 @@ async def parse_address(bodyForm: dict) -> AddressParseResult:
         logger.error(f"[ AI_ADDRESS_PARSE ] error parsing {raw_address}", exc_info=True)
         raise e
 
-    return parse_result
+    return { "data": parse_result.model_dump() }
 
 
