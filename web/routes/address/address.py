@@ -23,6 +23,7 @@ async def parse_address(bodyForm: dict) -> dict:
         logger.error(f"[ AI_ADDRESS_PARSE ] error parsing {raw_address}", exc_info=True)
         raise e
 
-    return { "data": parse_result.model_dump() }
+    status = "success" if parse_result.success else "error"
+    return { "status": status, "data": parse_result.model_dump() }
 
 
