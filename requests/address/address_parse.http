@@ -1,0 +1,18 @@
+
+
+# curl -X 'POST'
+#  'http://127.0.0.1:8000/ai/addresses/parse'
+#  -H 'accept: application/json'
+#  -H 'Content-Type: application/json'
+#  -d '{ "raw_address": "Av Independencia 2581" }'
+POST http://127.0.0.1:8000/ai/addresses/parse
+accept: application/json
+Content-Type: application/json
+
+{
+  "raw_address": "Av Independencia 2581"
+}
+
+###
+
+

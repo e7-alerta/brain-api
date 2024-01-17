@@ -1,0 +1,8 @@
+fastapi
+python-slugify
+uvicorn
+requests
+pydantic
+sentry-sdk[fastapi]
+logtail-python
+google-generativeai
