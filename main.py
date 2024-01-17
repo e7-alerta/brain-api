@@ -5,12 +5,19 @@ from web.routes.address.address import address_routes
 app = FastAPI()
 app.include_router(address_routes)
 
+APP_NAME = "brain-api"
+APP_VERSION = "1.0.1"
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {
+        "message": f"Hello {APP_NAME} v{APP_VERSION}"
+    }
 
 
-@app.get("/hello/{name}")
+@app.get("/version")
 async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+    return {
+        "version": APP_VERSION,
+        "app": APP_NAME
+    }
