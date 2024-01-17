@@ -16,7 +16,7 @@ async def root():
 
 
 @app.get("/version")
-async def say_hello(name: str):
+async def say_hello():
     return {
         "version": APP_VERSION,
         "app": APP_NAME
