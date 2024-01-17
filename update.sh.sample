@@ -1,0 +1,5 @@
+git pull
+docker build -t brain-api .
+docker stop brain-api
+docker rm brain-api
+docker run -d --name brain-api -p 9090:8000 brain-api
